@@ -1,0 +1,12 @@
+{
+    "title": "Les items",
+    "items": {
+        "nom": "item1",
+        "description": "description item 1",
+        "type": "arme",
+        "caracteristique": {
+            "force": 15
+        },
+        "note": 0
+    }
+}

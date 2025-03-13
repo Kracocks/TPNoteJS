@@ -1,0 +1,15 @@
+{
+    "title": "Les characters",
+    "characters": {
+        "nom": "charac1",
+        "description": "description charactere 1",
+        "caracteristique": {
+            "force": 60,
+            "endurance": 8,
+            "agilite": 40,
+            "intelligence": 69
+        },
+        "note": 0
+    }
+}
+    
