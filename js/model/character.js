@@ -57,4 +57,12 @@ export default class Character {
     get items() {
         return this.items;
     }
+
+    addItem(item) {
+        this.items.push(item)
+    }
+
+    deleteItem(item) {
+        delete this.items[item]
+    }
 }
