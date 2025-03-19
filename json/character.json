@@ -2,6 +2,7 @@
     "character": {
         "title": "Les characters",
         "characters": {
+            "id": 0,
             "nom": "charac1",
             "description": "description charactere 1",
             "caracteristique": {
@@ -16,6 +17,7 @@
     "item": {
         "title": "Les items",
         "items": {
+            "id": 0,
             "nom": "item1",
             "description": "description item 1",
             "type": "arme",
