@@ -10,19 +10,23 @@ export default class CharacterProvider {
             }
         };
         try {
-            // TODO: a modifier
             const response = await fetch(`${ENDPOINT}?_limit=${limit}`, options);
             const json = await response.json();
             c = json.character.characters
-            var character = new Character(
-                c.id,
-                c.nom,
-                c.description,
-            );
-            for (const [nom, value] of Object.entries(c.caracteristique)) {
-                character.addCarac(nom, value)
-            }
-            return character;
+            var characters = []
+            c.forEach(characJson => {
+                var character = new Character(
+                    characJson.id,
+                    characJson.nom,
+                    characJson.description,
+                );
+                for (const [nom, value] of Object.entries(characJson.caracteristique)) {
+                    character.addCarac(nom, value)
+                }
+                characters.push(character)
+            });
+            
+            return characters;
         } catch (err) {
             console.log('Error getting characters\n', err);
         }
@@ -78,7 +82,7 @@ export class ItemProvider {
                 for (const [nom, value] of Object.entries(c.caracteristique)) {
                     item.addCarac(nom, value)
                 }
-                items.push(item)
+                items.push(item);
             });
             return items;
         } catch (err) {
@@ -88,12 +92,16 @@ export class ItemProvider {
 
     // TODO : a finir
     static getItem = async (id) => {
-
-        const response = await fetch(`${ENDPOINT}/` + id, options);
-        const json = await response.json();
-        i = json.item.items
-        var items = []
-        i.forEach(jsonItem => {
+        const options = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        };
+        try {
+            const response = await fetch(`${ENDPOINT}/` + id, options);
+            const json = await response.json();
+            i = json.item.items
             var item = new Item(
                 jsonItem.id,
                 jsonItem.nom,
@@ -102,8 +110,9 @@ export class ItemProvider {
             for (const [nom, value] of Object.entries(c.caracteristique)) {
                 item.addCarac(nom, value)
             }
-            items.push(item)
-        });
-        return items;
+            return item;
+        } catch (err) {
+            console.log('Error getting item ' + id + '\n', err)
+        }
     }
 }
