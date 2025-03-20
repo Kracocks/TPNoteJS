@@ -1,15 +1,15 @@
-import Utils from '../../service/Utils.js';
-import CharacterProvider from '../../service/provider.js';
+import Utils from '../../services/utils.js';
+import CharacterProvider from '../../services/provider.js';
 
-export default class ShowCharacter {
-    async render() {
-        let characters = await CharacterProvider.fetchCharacter();
+export default class AllCharacters {
+    static async render() {
+        let tempo = await CharacterProvider.fetchCharacters();
 
         let view = `
             <section class="accueil">
-                <h2>${character.nom}</h2>
+                <h2>${tempo.title}</h2>
                 <ul>
-                    ${characters
+                    ${tempo.characters
                         .map(
                             (character) => `
                                 <li>

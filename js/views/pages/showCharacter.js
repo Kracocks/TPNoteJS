@@ -1,8 +1,8 @@
-import Utils from '../../service/Utils.js';
-import CharacterProvider from '../../service/provider.js';
+import Utils from '../../services/utils.js';
+import CharacterProvider from '../../services/provider.js';
 
 export default class ShowCharacter {
-    async render(){
+    static async render(){
         let request = Utils.parseRequestURL();
         let character = await provider.getCharacter(request.id);
 
