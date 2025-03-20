@@ -90,7 +90,7 @@ export class ItemProvider {
         }
     }
 
-    // TODO : a finir
+    // TODO : mettre type
     static getItem = async (id) => {
         const options = {
             method: 'GET',
