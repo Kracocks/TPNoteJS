@@ -10,6 +10,7 @@ export default class CharacterProvider {
             }
         };
         try {
+            // TODO: a modifier
             const response = await fetch(`${ENDPOINT}?_limit=${limit}`, options);
             const json = await response.json();
             c = json.character.characters
@@ -85,9 +86,9 @@ export class ItemProvider {
         }
     }
 
+    // TODO : a finir
     static getItem = async (id) => {
 
-        
         const response = await fetch(`${ENDPOINT}/` + id, options);
         const json = await response.json();
         i = json.item.items
