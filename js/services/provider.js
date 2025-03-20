@@ -1,4 +1,5 @@
 import { ENDPOINT } from "../config.js";
+import { Character } from "../model/character.js"
 
 export default class CharacterProvider {
     static fetchCharacters = async (limit = 10) => {
@@ -11,9 +12,18 @@ export default class CharacterProvider {
         try {
             const response = await fetch(`${ENDPOINT}?_limit=${limit}`, options);
             const json = await response.json();
-            return json;
+            c = json.character.characters
+            var character = new Character(
+                c.id,
+                c.nom,
+                c.description,
+            );
+            for (const [nom, value] of Object.entries(c.caracteristique)) {
+                character.addCarac(nom, value)
+            }
+            return character;
         } catch (err) {
-            console.log('Error getting documents\n', err);
+            console.log('Error getting characters\n', err);
         }
     }
 
@@ -27,7 +37,16 @@ export default class CharacterProvider {
         try {
             const response = await fetch(`${ENDPOINT}/` + id, options);
             const json = await response.json();
-            return json;
+            c = json.character.characters
+            var character = new Character(
+                c.id,
+                c.nom,
+                c.description,
+            );
+            for (const [nom, value] of Object.entries(c.caracteristique)) {
+                character.addCarac(nom, value)
+            }
+            return character;
         } catch (err) {
             console.log('Error getting documents\n', err);
         }
