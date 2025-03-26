@@ -1,5 +1,3 @@
-
-
 export default class Error404 {
     static async render() {
         return `
@@ -9,5 +7,4 @@ export default class Error404 {
             </section>
         `;
     }
-
 }
