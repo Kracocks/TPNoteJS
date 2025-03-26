@@ -14,5 +14,4 @@ Pour lancer le `json-server`, ecécute les commandes suivante dans ton terminal 
 
 ```bash
 npx json-server character.json
-npx json-server items.json
 ``` 
