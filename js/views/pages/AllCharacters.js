@@ -9,17 +9,14 @@ export default class AllCharacters {
             <section class="accueil">
                 <h2>${tempo.title}</h2>
                 <ul>
-                    ${tempo.characters
-                        .map(
-                            (character) => `
-                                <li>
-                                    <a href="http://localhost:8000/#/characters/:${character.id}">
-                                        <img loading="lazy" src="../../../data/c${character.id}.jpg" alt="${character.nom}">
-                                        ${character.nom}
-                                    </a>
-                                </li>`
-                        )
-}
+                    ${tempo.characters.map((character) => `
+                        <li>
+                            <a href="http://localhost:8000/#/characters/${character.id}">
+                                <img loading="lazy" src="../../../img/C${character.id}.png" alt="${character.nom}">
+                                ${character.nom}
+                            </a>
+                        </li>`
+                    )}
                 </ul>
             </section>`;
         return view;

@@ -4,7 +4,7 @@ import CharacterProvider from '../../services/provider.js';
 export default class ShowCharacter {
     static async render(){
         let request = Utils.parseRequestURL();
-        let character = await provider.getCharacter(request.id);
+        let character = await CharacterProvider.getCharacter(request.id);
 
         return `
             <section class="character">

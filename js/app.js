@@ -1,7 +1,7 @@
 import Utils from "./services/utils.js";
 import AllCharacters from "./views/pages/AllCharacters.js";
 import ShowCharacter from "./views/pages/showCharacter.js";
-import Error404 from "./views/pages/Error404.js";
+import Error404 from "./views/pages/error404.js";
 
 const routes = {
     '/': AllCharacters,
