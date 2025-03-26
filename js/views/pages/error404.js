@@ -1,7 +1,10 @@
 export default class Error404 {
-    async render() {
+    static async render() {
         return `
-            <h2>Erreur 404.</h2>
-        `
+            <section class="error404">
+                <h1>404</h1>
+                <p>Page not found</p>
+            </section>
+        `;
     }
 }

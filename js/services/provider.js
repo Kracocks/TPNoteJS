@@ -1,7 +1,7 @@
 import { ENDPOINT } from "../config.js";
 
 export default class CharacterProvider {
-    static fetchCharacters = async (limit = 10) => {
+    static fetchCharacters = async (limit = 4) => {
         const options = {
             method: 'GET',
             headers: {

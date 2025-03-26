@@ -1,24 +1,29 @@
-
 import Utils from "./services/utils.js";
-import CharacterAll from "./views/pages/characterAll.js";
+import AllCharacters from "./views/pages/AllCharacters.js";
 import ShowCharacter from "./views/pages/showCharacter.js";
 import Error404 from "./views/pages/error404.js";
 
 const routes = {
-    '/': CharacterAll,
-    '/characters/': CharacterAll,
-    '/characters/:id/': ShowCharacter
+    '/': AllCharacters,
+    '/characters': AllCharacters,
+    '/characters/:id': ShowCharacter,
+    '/404': Error404
 };
 
 const router = async () => {
     const content = null || document.querySelector('#content');
-    let request = Utils.parseRequestURL();
-    console.log(request)
-    let parsedURL = (request.resource ? '/' + request.resource : '/') +
-        (request.id ? '/:id' : '') +
-        (request.verb ? '/' + request.verb : '/');
+
+    let resource = Utils.parseRequestURL();
+    console.log("Requete : " . resource)
+
+    let parsedURL = (resource.resource ? '/' + resource.resource : '/') +
+    (resource.id ? '/:id' : '') +
+    (resource.verb ? '/' + resource.verb : '');
+
     console.log(parsedURL)
-    let page = new (routes[parsedURL] || Error404);
+    let page = routes[parsedURL] ? routes[parsedURL] : routes['/error404'];
+    console.log("Page : ", page)
+    
     content.innerHTML = await page.render();
 }
 
