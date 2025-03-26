@@ -1,7 +1,13 @@
 
+import Utils from "./services/utils.js";
+import CharacterAll from "./views/pages/characterAll.js";
+import ShowCharacter from "./views/pages/showCharacter.js";
+import Error404 from "./views/pages/error404.js";
 
 const routes = {
-    '/': null,
+    '/': CharacterAll,
+    '/characters/': CharacterAll,
+    '/characters/:id/': ShowCharacter
 };
 
 const router = async () => {
@@ -12,7 +18,7 @@ const router = async () => {
         (request.id ? '/:id' : '') +
         (request.verb ? '/' + request.verb : '/');
     console.log(parsedURL)
-    let page = new routes[parsedURL] || Error404;
+    let page = new (routes[parsedURL] || Error404);
     content.innerHTML = await page.render();
 }
 

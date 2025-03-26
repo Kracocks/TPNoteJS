@@ -9,7 +9,7 @@ export default class CharacterProvider {
             }
         };
         try {
-            const response = await fetch(`${ENDPOINT}?_limit=${limit}`, options);
+            const response = await fetch(`${ENDPOINT}?_limit=${limit}/character`, options);
             const json = await response.json();
             return json;
         } catch (err) {
