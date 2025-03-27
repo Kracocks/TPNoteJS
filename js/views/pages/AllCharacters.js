@@ -5,10 +5,10 @@ export default class AllCharacters {
         
         let characters = await CharacterProvider.fetchCharacters();
         let view = `
-            <section class="accueil">
+            <section class="characters">
                 <h2>Les characters</h2>
                 <ul>
-                    ${characters.characters.map((character) => `
+                    ${characters.map((character) => `
                         <li>
                             <a href="http://localhost:8000/#/characters/${character.id}">
                                 <img loading="lazy" src="../../../img/C${character.id}.png" alt="${character.nom}">
