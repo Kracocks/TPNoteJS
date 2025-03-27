@@ -18,17 +18,24 @@ const router = async () => {
     const content = null || document.querySelector('#content');
 
     let resource = Utils.parseRequestURL();
-    console.log("Requete : " . resource)
 
     let parsedURL = (resource.resource ? '/' + resource.resource : '/') +
     (resource.id ? '/:id' : '') +
     (resource.verb ? '/' + resource.verb : '');
 
-    console.log(parsedURL)
     let page = routes[parsedURL] ? routes[parsedURL] : routes['/error404'];
-    console.log("Page : ", page)
     
     content.innerHTML = await page.render();
+
+    console.log(typeof(page));
+    if (page == AllCharacters) {
+        let code = await page.renderScript();
+
+        let script = document.createElement("script");
+        script.type = "module";
+        script.innerHTML = code;
+        document.body.appendChild(script);
+    }
 }
 
 window.addEventListener('load', router);
