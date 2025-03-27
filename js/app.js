@@ -7,7 +7,7 @@ import Error404 from "./views/pages/error404.js";
 import Accueil from "./views/pages/accueil.js";
 
 const routes = {
-    '/': Accueil,
+    '/': AllItems,
     '/characters': AllCharacters,
     '/characters/:id': ShowCharacter,
     '/items': AllItems,

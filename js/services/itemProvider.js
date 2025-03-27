@@ -12,11 +12,15 @@ export default class ItemProvider {
         try {
             const response = await fetch(`${ENDPOINT}/items?_limit=${limit}`, options);
             const json = await response.json();
-            let res = [];
+            let items = [];
             json.forEach(item => {
-                res.push(new Item(item.id, item.nom, item.description, item.type));
+                let i = new Item(item.id, item.nom, item.description, item.type, item.note)
+                Object.entries(item.caracteristique).map(([key, value]) => {
+                    i.addCarac(key, value)
+                });
+                items.push(i)
             });
-            return res;
+            return items;
         } catch (err) {
             console.log('Error getting items\n', err);
         }
@@ -30,9 +34,13 @@ export default class ItemProvider {
             }
         };
         try {
-            const response = await fetch(`${ENDPOINT}/items` + id, options);
+            const response = await fetch(`${ENDPOINT}/items/` + id, options);
             const json = await response.json();
-            return new Item(json.id, json.nom, json.description, json.type);
+            let i = new Item(json.id, json.nom, json.description, json.type, json.note);
+            Object.entries(json.caracteristique).map(([key, value]) => {
+                i.addCarac(key, value)
+            });
+            return i;
         } catch (err) {
             console.log('Error getting item\n', err);
         }
