@@ -1,12 +1,16 @@
 import Utils from "./services/utils.js";
 import AllCharacters from "./views/pages/AllCharacters.js";
 import ShowCharacter from "./views/pages/showCharacter.js";
+import AllItems from "./views/pages/allItems.js";
+import ShowItem from "./views/pages/showItem.js";
 import Error404 from "./views/pages/error404.js";
 
 const routes = {
     '/': AllCharacters,
     '/characters': AllCharacters,
     '/characters/:id': ShowCharacter,
+    '/items': AllItems,
+    '/items/:id': ShowItem,
     '/404': Error404
 };
 

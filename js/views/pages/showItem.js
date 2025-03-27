@@ -1,7 +1,7 @@
 import Utils from '../../services/utils.js';
 import ItemProvider from '../../services/itemProvider.js';
 
-export default class ShowCharacter {
+export default class ShowItem {
     static async render() {
         let request = Utils.parseRequestURL();
         let item = await ItemProvider.getItem(request.id);
