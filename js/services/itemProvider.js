@@ -1,5 +1,5 @@
 import { ENDPOINT } from "../config.js";
-import Item from "../models/item.js";
+import Item from "../model/item.js";
 
 export default class ItemProvider {
     static fetchItems = async (limit = 4) => {

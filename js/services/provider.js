@@ -25,7 +25,7 @@ export default class CharacterProvider {
             }
         };
         try {
-            const response = await fetch(`${ENDPOINT}/characters` + id, options);
+            const response = await fetch(`${ENDPOINT}/characters/` + id, options);
             const json = await response.json();
             return json;
         } catch (err) {
