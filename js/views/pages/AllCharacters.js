@@ -32,8 +32,8 @@ export default class AllCharacters {
         let taille = await CharacterProvider.getTaille();
 
         const updateCounter = () => {
-            const currentStart = AllCharacters.debut + 1; // Index de départ (1-based)
-            const currentEnd = Math.min(AllCharacters.debut + 4, taille); // Index de fin
+            const currentStart = AllCharacters.debut + 1;
+            const currentEnd = Math.min(AllCharacters.debut + 4, taille);
             document.getElementById('counter').textContent = `${currentStart}-${currentEnd} / ${taille}`;
         };
     
