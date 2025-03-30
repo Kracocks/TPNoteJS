@@ -14,7 +14,7 @@ const routes = {
     '/404': Error404
 };
 
-const router = async () => {
+export const router = async () => {
     const content = null || document.querySelector('#content');
 
     let resource = Utils.parseRequestURL();
@@ -27,14 +27,8 @@ const router = async () => {
     
     content.innerHTML = await page.render();
 
-    console.log(typeof(page));
-    if (page == AllCharacters) {
-        let code = await page.renderScript();
-
-        let script = document.createElement("script");
-        script.type = "module";
-        script.innerHTML = code;
-        document.body.appendChild(script);
+    if (page === AllCharacters) {
+        await page.renderScript();
     }
 }
 
