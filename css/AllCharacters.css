@@ -81,17 +81,15 @@
     border-bottom: 1px solid #ddd;
 }
 
-/* Centrer les boutons et aligner le compteur à droite */
 .characters .button-container {
     display: flex;
-    justify-content: center; /* Centre les boutons horizontalement */
-    align-items: center; /* Aligne les éléments verticalement */
-    gap: 10px; /* Ajoute un espace entre les boutons */
-    margin-top: 20px; /* Ajoute un espace au-dessus des boutons */
-    position: relative; /* Permet de positionner le compteur à droite */
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    position: relative;
 }
 
-/* Style des boutons */
 .characters button {
     background-color: #606060;
     color: #fff;
@@ -112,10 +110,9 @@
     cursor: not-allowed;
 }
 
-/* Style du compteur */
 .characters .counter {
-    position: absolute; /* Positionne le compteur par rapport au conteneur */
-    right: 10px; /* Aligne le compteur à droite */
+    position: absolute;
+    right: 10px;
     font-size: 14px;
     color: #333;
     background-color: rgba(255, 255, 255, 0.8);
