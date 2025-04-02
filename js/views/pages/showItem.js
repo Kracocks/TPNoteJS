@@ -1,5 +1,7 @@
 import Utils from '../../services/utils.js';
 import ItemProvider from '../../services/itemProvider.js';
+import { router } from '../../app.js';
+
 
 export default class ShowItem {
     static async render() {
@@ -26,22 +28,13 @@ export default class ShowItem {
         `).join('');
 
         let buttonFav = () => {
-            if (localStorage.getItem('favItems') === null || !JSON.parse(localStorage.getItem('favItems')).includes(item.id)) {
+            let items = JSON.parse(localStorage.getItem('favItems') || '[]')
+            if (localStorage.getItem('favItems') === null || !items.includes(item.id)) {
                 return `<button id="addToFav">Ajouter aux favoris</button>`;
             } else {
                 return `<button id="removeFromFav">Retirer des favoris</button>`;
             }
         }
-
-        document.getElementById('addToFav').addEventListener('click', () => {
-            Utils.addFavoriteItem(item.id);
-            router();
-        });
-
-        document.getElementById('removeFromFav').addEventListener('click', () => {
-            Utils.removeFavoriteItem(item.id);
-            router();
-        });
 
         return `
             <section class="character">
@@ -64,5 +57,24 @@ export default class ShowItem {
                 </ul>
             </section>
         `;
+    }
+
+    static async renderScript() {
+        let request = Utils.parseRequestURL();
+        let item = await ItemProvider.getItem(request.id);
+
+        if (document.getElementById('addToFav') != null) {
+            document.getElementById('addToFav').addEventListener('click', () => {
+                Utils.addFavoriteItem(item.id);
+                router();
+            });
+        }
+
+        if (document.getElementById('removeFromFav') != null) {
+            document.getElementById('removeFromFav').addEventListener('click', () => {
+                Utils.removeFavoriteItem(item.id);
+                router();
+            });
+        }
     }
 }

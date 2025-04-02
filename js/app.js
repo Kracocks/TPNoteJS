@@ -30,7 +30,7 @@ export const router = async () => {
     
     content.innerHTML = await page.render();
 
-    if (page === AllCharacters || page === AllFavorites || page === ShowCharacter) {
+    if (page === AllCharacters || page === AllFavorites || page === ShowCharacter || page === ShowItem) {
         await page.renderScript();
     }
 }

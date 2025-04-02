@@ -28,7 +28,8 @@ export default class ShowCharacter {
         `).join('');
 
         let buttonFav = () => {
-            if (localStorage.getItem('favCharacters') === null || !JSON.stringify(localStorage.getItem('favCharacters')).includes(character.id)) {
+            let characters = JSON.parse(localStorage.getItem('favCharacters') || '[]')
+            if (localStorage.getItem('favCharacters') === null ||  !characters.includes(character.id)) {
                 return `<button id="addToFav">Ajouter aux favoris</button>`;
             } else {
                 return `<button id="removeFromFav">Retirer des favoris</button>`;
