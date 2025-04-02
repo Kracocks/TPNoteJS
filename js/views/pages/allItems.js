@@ -52,9 +52,7 @@ export default class AllItems {
     }
 
     static async renderScript() {
-        console.log("test")
         let taille = await ItemProvider.getTaille(AllItems.type);
-        console.log(taille);
 
         document.getElementById('item-select').addEventListener('change', (event) => {
             AllItems.type = event.target.value;

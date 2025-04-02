@@ -73,9 +73,6 @@ export default class ItemProvider {
                 const filterItemsName = filterItemsType.filter(items =>
                     items.nom.toLowerCase().includes(nomSearch)
                 );
-
-                console.log("test : " + filterItemsName)
-        
                 return filterItemsName.length;
             } catch (err) {
                 console.log('Error getting documents\n', err);
