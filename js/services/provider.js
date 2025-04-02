@@ -49,7 +49,26 @@ export default class CharacterProvider {
         }
     }
 
-    static updateNote = async (note) => {
-        
+    static updateNote = async (character, note) => {
+        let newNote = note;
+        if (character.note !== 0) {
+            newNote = (character.note + note) / 2;
+        }
+        const options = {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                note: newNote
+            })
+        };
+        try {
+            const response = await fetch(`${ENDPOINT}/characters/` + character.id, options);
+            const json = await response.json();
+            return json;
+        } catch (err) {
+            console.log('Error getting documents\n', err);
+        }
     }
 }

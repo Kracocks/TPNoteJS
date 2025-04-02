@@ -53,6 +53,7 @@ export default class ShowCharacter {
                 <ul>
                     ${note}
                 </ul>
+                <button id="noterCharacter">Ajouter mon avis</button>
             </section>
         `;
     }
@@ -72,6 +73,18 @@ export default class ShowCharacter {
             document.getElementById('removeFromFav').addEventListener('click', () => {
                 Utils.removeFavoriteCharacter(character.id);
                 router();
+            });
+        }
+
+        if (document.getElementById('noterCharacter') != null) {
+            document.getElementById('noterCharacter').addEventListener('click', () => {
+                let note = document.querySelector(`input[name="note-${character.id}"]:checked`);
+                if (note) {
+                    CharacterProvider.updateNote(character, parseInt(note.value));
+                    router();
+                } else {
+                    alert('Veuillez choisir une note');
+                }
             });
         }
     }

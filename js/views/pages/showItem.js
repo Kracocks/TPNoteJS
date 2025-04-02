@@ -55,7 +55,7 @@ export default class ShowItem {
                 <ul>
                     ${note}
                 </ul>
-                <button id="noterItem">Ajouter mon avis</button>;
+                <button id="noterItem">Ajouter mon avis</button>
             </section>
         `;
     }
@@ -75,6 +75,18 @@ export default class ShowItem {
             document.getElementById('removeFromFav').addEventListener('click', () => {
                 Utils.removeFavoriteItem(item.id);
                 router();
+            });
+        }
+
+        if (document.getElementById('noterItem') != null) {
+            document.getElementById('noterItem').addEventListener('click', () => {
+                let note = document.querySelector(`input[name="note-${item.id}"]:checked`);
+                if (note) {
+                    ItemProvider.updateNote(item, parseInt(note.value));
+                    router();
+                } else {
+                    alert('Veuillez choisir une note');
+                }
             });
         }
     }
