@@ -1,5 +1,7 @@
 import Utils from '../../services/utils.js';
 import CharacterProvider from '../../services/provider.js';
+import { router } from '../../app.js';
+
 
 export default class ShowCharacter {
     static async render(){
@@ -26,22 +28,12 @@ export default class ShowCharacter {
         `).join('');
 
         let buttonFav = () => {
-            if (localStorage.getItem('favItems') === null || !JSON.parse(localStorage.getItem('favItems')).includes(item.id)) {
+            if (localStorage.getItem('favCharacters') === null || !JSON.stringify(localStorage.getItem('favCharacters')).includes(character.id)) {
                 return `<button id="addToFav">Ajouter aux favoris</button>`;
             } else {
                 return `<button id="removeFromFav">Retirer des favoris</button>`;
             }
         }
-
-        document.getElementById('addToFav').addEventListener('click', () => {
-            Utils.addFavoriteCharacter(character.id);
-            router();
-        });
-
-        document.getElementById('removeFromFav').addEventListener('click', () => {
-            Utils.removeFavoriteCharacter(character.id);
-            router();
-        });
 
         return `
             <section class="character">
@@ -62,5 +54,24 @@ export default class ShowCharacter {
                 </ul>
             </section>
         `;
+    }
+
+    static async renderScript() {
+        let request = Utils.parseRequestURL();
+        let character = await CharacterProvider.getCharacter(request.id);
+
+        if (document.getElementById('addToFav') != null) {
+            document.getElementById('addToFav').addEventListener('click', () => {
+                Utils.addFavoriteCharacter(character.id);
+                router();
+            });
+        }
+
+        if (document.getElementById('removeFromFav') != null) {
+            document.getElementById('removeFromFav').addEventListener('click', () => {
+                Utils.removeFavoriteCharacter(character.id);
+                router();
+            });
+        }
     }
 }

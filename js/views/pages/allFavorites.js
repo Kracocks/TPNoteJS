@@ -7,9 +7,8 @@ export default class AllFavorites {
     static debutItem = 0;
 
     static async render() {
-        //let characters = await CharacterProvider.fetchCharacters(4, AllFavorites.debut);
-        let items_ids = localStorage.getItem('favItems');
-        let characters_ids = localStorage.getItem('favCharacters');
+        let characters_ids = JSON.parse(localStorage.getItem('favCharacters') || '[]');
+        let items_ids = JSON.parse(localStorage.getItem('favItems') || '[]');
         let view = `
             <section class="charactersFavorites">
                 <h2>Mes characters favoris</h2>
@@ -17,21 +16,21 @@ export default class AllFavorites {
                     ${characters_ids.map((character_id) => {
                         let character = CharacterProvider.getCharacter(character_id);
                         let ratings = Array.from({ length: character.note }, (_, i) => `
-                            <li>
-                                <img loading="lazy" src="../../../img/star.png" alt="star${i}">
-                            </li>
-                        `).join('');
-                      
+                                <li>
+                                    <img loading="lazy" src="../../../img/star.png" alt="star${i}">
+                                </li>
+                            `).join('');
+
                         return `
-                        <li>
-                            <a href="http://localhost:8000/#/characters/${character_id}">
-                                <img loading="lazy" src="../../../img/C${character_id}.png" alt="${character.nom}">
-                                <span>${character.nom}</span>
-                            </a>
-                            <ul>
-                                ${ratings}
-                            </ul>
-                        </li>`;
+                            <li>
+                                <a href="http://localhost:8000/#/characters/${character_id}">
+                                    <img loading="lazy" src="../../../img/C${character_id}.png" alt="${character.nom}">
+                                    <span>${character.nom}</span>
+                                </a>
+                                <ul>
+                                    ${ratings}
+                                </ul>
+                            </li>`;
                     }).join('')}
                 </ul>
                 <div class="button-container">
@@ -47,21 +46,21 @@ export default class AllFavorites {
                     ${items_ids.map((item_id) => {
                         let item = ItemProvider.getItem(item_id);
                         let ratings = Array.from({ length: item.note }, (_, i) => `
-                            <li>
-                                <img loading="lazy" src="../../../img/star.png" alt="star${i}">
-                            </li>
-                        `).join('');
-                      
+                                <li>
+                                    <img loading="lazy" src="../../../img/star.png" alt="star${i}">
+                                </li>
+                            `).join('');
+
                         return `
-                        <li>
-                            <a href="http://localhost:8000/#/items/${item_id}">
-                                <img loading="lazy" src="../../../img/I${item_id}.png" alt="${item.nom}">
-                                <span>${item.nom}</span>
-                            </a>
-                            <ul>
-                                ${ratings}
-                            </ul>
-                        </li>`;
+                            <li>
+                                <a href="http://localhost:8000/#/items/${item_id}">
+                                    <img loading="lazy" src="../../../img/I${item_id}.png" alt="${item.nom}">
+                                    <span>${item.nom}</span>
+                                </a>
+                                <ul>
+                                    ${ratings}
+                                </ul>
+                            </li>`;
                     }).join('')}
                 </ul>
                 <div class="button-container">
@@ -76,8 +75,10 @@ export default class AllFavorites {
     }
 
     static async renderScript() {
-        let tailleChar = JSON.parse(localStorage.getItem('favCharacters')).length;
-        let tailleItem = JSON.parse(localStorage.getItem('favItems')).length;
+        let char_ids = JSON.parse(localStorage.getItem('favCharacters') || '[]');
+        let item_ids = JSON.parse(localStorage.getItem('favItems') || '[]');
+        let tailleChar = Array.isArray(char_ids) ? char_ids.length : 0;
+        let tailleItem = Array.isArray(item_ids) ? item_ids.length : 0;
 
         const updateCounterChar = () => {
             const currentStartChar = AllFavorites.debutChar + 1;

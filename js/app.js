@@ -30,9 +30,16 @@ export const router = async () => {
     
     content.innerHTML = await page.render();
 
-    if (page === AllCharacters || page === AllFavorites) {
+    if (page === AllCharacters || page === AllFavorites || page === ShowCharacter) {
         await page.renderScript();
     }
+}
+
+if (localStorage.getItem('favCharacters') === null) {
+    localStorage.setItem('favCharacters', []);
+}
+if (localStorage.getItem('favItems') === null) {
+    localStorage.setItem('favItems', []);
 }
 
 window.addEventListener('load', router);
