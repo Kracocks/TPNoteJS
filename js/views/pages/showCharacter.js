@@ -21,6 +21,14 @@ export default class ShowCharacter {
                             </li>
                         `).join('');
 
+        let favoris = () => {
+            let favCharacters = JSON.parse(localStorage.getItem('favCharacters') || '[]')
+            if (favCharacters.includes(character.id)) {
+                return `<img loading="lazy" src="../../../img/favorite.png" alt="star">`;
+            }
+            return '';
+        }
+
         let caracteristiques = Object.entries(character.caracteristique).map(([key, value]) => `
             <li>
                 <p>${key} -> ${value}</p>
@@ -46,6 +54,7 @@ export default class ShowCharacter {
                     ${caracteristiques}
                 </ul>
                 ${buttonFav()}
+                ${favoris()}
                 <h2>Note</h2>
                 <ul>
                     ${ratings}

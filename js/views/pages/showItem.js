@@ -21,6 +21,14 @@ export default class ShowItem {
                             </li>
                         `).join('');
 
+        let favoris = () => {
+            let favItems = JSON.parse(localStorage.getItem('favItems') || '[]')
+            if (favItems.includes(item.id)) {
+                return `<img loading="lazy" src="../../../img/favorite.png" alt="star">`;
+            }
+            return '';
+        }
+
         let caracteristiques = Object.entries(item.caracteristiques).map(([key, value]) => `
             <li>
                 <p>${key} -> ${value}</p>
@@ -48,6 +56,7 @@ export default class ShowItem {
                     ${caracteristiques}
                 </ul>
                 ${buttonFav()}
+                ${favoris()}
                 <h2>Note</h2>
                 <ul>
                     ${ratings}
