@@ -33,6 +33,10 @@ export const router = async () => {
     if (page === AllCharacters || page === AllFavorites || page === ShowCharacter || page === ShowItem) {
         await page.renderScript();
     }
+
+    if (page === AllItems) {
+        await page.renderScript();
+    }
 }
 
 if (localStorage.getItem('favCharacters') === null) {
