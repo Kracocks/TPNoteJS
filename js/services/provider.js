@@ -48,4 +48,8 @@ export default class CharacterProvider {
             console.log('Error getting documents\n', err);
         }
     }
+
+    static updateNote = async (note) => {
+        
+    }
 }

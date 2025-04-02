@@ -55,6 +55,7 @@ export default class ShowItem {
                 <ul>
                     ${note}
                 </ul>
+                <button id="noterItem">Ajouter mon avis</button>;
             </section>
         `;
     }

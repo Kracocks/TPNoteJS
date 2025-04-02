@@ -45,4 +45,8 @@ export default class ItemProvider {
             console.log('Error getting item\n', err);
         }
     }
+
+    static updateNote = async (note) => {
+
+    }
 }
