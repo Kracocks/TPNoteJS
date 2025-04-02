@@ -3,12 +3,15 @@ import { router } from '../../app.js';
 
 export default class AllCharacters {
     static debut = 0;
+    static nom = '';
 
     static async render() {
         let characters = await CharacterProvider.fetchCharacters(4, AllCharacters.debut);
         let view = `
             <section class="characters">
                 <h2>Les characters</h2>
+                <input id="search-bar" type="text" placeholder="Rechercher un personnage" />
+                <button id="search">Valider</button>
                 <ul>
                     ${characters.map((character) => {
                         let ratings = Array.from({ length: character.note }, (_, i) => `
@@ -78,5 +81,12 @@ export default class AllCharacters {
 
         document.getElementById('prev').addEventListener('click', updateCounter);
         document.getElementById('next').addEventListener('click', updateCounter);
+
+        document.getElementById('search').addEventListener('click', () => {
+            let recherche = document.getElementById('search-bar').value;
+            AllCharacters.nom = recherche;
+            AllCharacters.debut = 0;
+            router();
+        })
     }
 }

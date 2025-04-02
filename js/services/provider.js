@@ -1,4 +1,5 @@
 import { ENDPOINT } from "../config.js";
+import AllCharacters from "../views/pages/AllCharacters.js";
 
 export default class CharacterProvider {
     static fetchCharacters = async (limit = 4, start = 0) => {
@@ -9,9 +10,19 @@ export default class CharacterProvider {
             }
         };
         try {
-            const response = await fetch(`${ENDPOINT}/characters?_start=${start}&_limit=${limit}`, options);
+            let nomSearch = AllCharacters.nom ? AllCharacters.nom.toLowerCase() : "";
+            let url = `${ENDPOINT}/characters`;
+
+            const response = await fetch(url, options);
             const json = await response.json();
-            return json;
+
+            const filteredCharacters = json.filter(character =>
+                character.nom.toLowerCase().includes(nomSearch)
+            );
+
+            const paginatedCharacters = filteredCharacters.slice(start, start + limit);
+
+            return paginatedCharacters;
         } catch (err) {
             console.log('Error getting documents\n', err);
         }
@@ -41,9 +52,15 @@ export default class CharacterProvider {
             }
         };
         try {
+            let nomSearch = AllCharacters.nom ? AllCharacters.nom.toLowerCase() : "";
             const response = await fetch(`${ENDPOINT}/characters`, options);
             const json = await response.json();
-            return json.length;
+    
+            const filteredCharacters = json.filter(character =>
+                character.nom.toLowerCase().includes(nomSearch)
+            );
+    
+            return filteredCharacters.length;
         } catch (err) {
             console.log('Error getting documents\n', err);
         }
