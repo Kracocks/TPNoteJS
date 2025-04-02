@@ -25,6 +25,24 @@ export default class ShowItem {
             </li>
         `).join('');
 
+        let buttonFav = () => {
+            if (localStorage.getItem('favItems') === null || !JSON.parse(localStorage.getItem('favItems')).includes(item.id)) {
+                return `<button id="addToFav">Ajouter aux favoris</button>`;
+            } else {
+                return `<button id="removeFromFav">Retirer des favoris</button>`;
+            }
+        }
+
+        document.getElementById('addToFav').addEventListener('click', () => {
+            Utils.addFavoriteItem(item.id);
+            router();
+        });
+
+        document.getElementById('removeFromFav').addEventListener('click', () => {
+            Utils.removeFavoriteItem(item.id);
+            router();
+        });
+
         return `
             <section class="character">
                 <h2>${item.nom}</h2>
@@ -36,6 +54,7 @@ export default class ShowItem {
                 <ul>
                     ${caracteristiques}
                 </ul>
+                ${buttonFav()}
                 <h2>Note</h2>
                 <ul>
                     ${ratings}
