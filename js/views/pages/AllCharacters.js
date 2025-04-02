@@ -51,7 +51,7 @@ export default class AllCharacters {
     }
 
     static async renderScript() {
-        let taille = await pro.getTaille();
+        let taille = await CharacterProvider.getTaille();
 
         const updateCounter = () => {
             const currentStart = AllCharacters.debut + 1;
