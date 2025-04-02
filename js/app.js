@@ -4,9 +4,10 @@ import ShowCharacter from "./views/pages/showCharacter.js";
 import AllItems from "./views/pages/allItems.js";
 import ShowItem from "./views/pages/showItem.js";
 import Error404 from "./views/pages/error404.js";
+import Accueil from "./views/pages/accueil.js";
 
 const routes = {
-    '/': AllCharacters,
+    '/': Accueil,
     '/characters': AllCharacters,
     '/characters/:id': ShowCharacter,
     '/items': AllItems,
