@@ -53,6 +53,30 @@ export default class ItemProvider {
         }
     }
 
+    static updateNote = async (item, note) => {
+        let newNote = note;
+        if (item.note !== 0) {
+            newNote = (item.note + note) / 2;
+        }
+        console.log(newNote);
+        const options = {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                note: newNote
+            })
+        };
+        try {
+            const response = await fetch(`${ENDPOINT}/items/` + item.id, options);
+            const json = await response.json();
+            return json;
+        } catch (err) {
+            console.log('Error getting documents\n', err);
+        }
+    }
+    
     static getTaille = async (type="") => {
             const options = {
                 method: 'GET',

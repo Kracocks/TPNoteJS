@@ -21,6 +21,14 @@ export default class ShowItem {
                             </li>
                         `).join('');
 
+        let favoris = () => {
+            let favItems = JSON.parse(localStorage.getItem('favItems') || '[]')
+            if (favItems.includes(item.id)) {
+                return `<img loading="lazy" src="../../../img/favorite.png" alt="star">`;
+            }
+            return '';
+        }
+
         let caracteristiques = Object.entries(item.caracteristiques).map(([key, value]) => `
             <li>
                 <p>${key} -> ${value}</p>
@@ -48,6 +56,7 @@ export default class ShowItem {
                     ${caracteristiques}
                 </ul>
                 ${buttonFav()}
+                ${favoris()}
                 <h2>Note</h2>
                 <ul>
                     ${ratings}
@@ -55,6 +64,7 @@ export default class ShowItem {
                 <ul>
                     ${note}
                 </ul>
+                <button id="noterItem">Ajouter mon avis</button>
             </section>
         `;
     }
@@ -74,6 +84,18 @@ export default class ShowItem {
             document.getElementById('removeFromFav').addEventListener('click', () => {
                 Utils.removeFavoriteItem(item.id);
                 router();
+            });
+        }
+
+        if (document.getElementById('noterItem') != null) {
+            document.getElementById('noterItem').addEventListener('click', () => {
+                let note = document.querySelector(`input[name="note-${item.id}"]:checked`);
+                if (note) {
+                    ItemProvider.updateNote(item, parseInt(note.value));
+                    router();
+                } else {
+                    alert('Veuillez choisir une note');
+                }
             });
         }
     }

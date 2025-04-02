@@ -30,12 +30,21 @@ export default class AllItems {
                             </li>
                         `).join('');
 
+                        let favoris = () => {
+                            let favItem = JSON.parse(localStorage.getItem('favItems') || '[]')
+                            if (favItem.includes(item.id)) {
+                                return `<img loading="lazy" src="../../../img/favorite.png" alt="star">`;
+                            }
+                            return '';
+                        }
+
                         return `
                             <li>
                                 <a href="http://localhost:8000/#/items/${item.id}">
                                     <img loading="lazy" src="../../../img/I${item.id}.png" alt="${item.nom}">
                                     <span>${item.nom}</span>
                                 </a>
+                                ${favoris()}
                                 <ul>
                                     ${ratings}
                                 </ul>
