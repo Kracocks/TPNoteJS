@@ -7,7 +7,7 @@ export default class AllItems {
     static nom = '';
 
     static async render() {
-        let items = await ItemProvider.fetchItemsByType(AllItems.type, 4);
+        let items = await ItemProvider.fetchItemsByType(AllItems.type, AllItems.debut, 4);
 
         let view = `
             <section class="items">
@@ -52,25 +52,27 @@ export default class AllItems {
     }
 
     static async renderScript() {
+        console.log("test")
+        let taille = await ItemProvider.getTaille(AllItems.type);
+        console.log(taille);
+
         document.getElementById('item-select').addEventListener('change', (event) => {
             AllItems.type = event.target.value;
             AllItems.debut = 0;
             router();
         });
 
-        let items = await ItemProvider.fetchItemsByType(AllItems.type, 4);
-
         const updateCounter = () => {
             const currentStart = AllItems.debut + 1;
-            const currentEnd = Math.min(AllItems.debut + 4, items.length);
-            document.getElementById('counter').textContent = `${currentStart}-${currentEnd} / ${items.length}`;
+            const currentEnd = Math.min(AllItems.debut + 4, taille);
+            document.getElementById('counter').textContent = `${currentStart}-${currentEnd} / ${taille}`;
         };
 
         updateCounter();
 
         document.getElementById('prev').addEventListener('click', () => {
             if (AllItems.debut <= 3) {
-                AllItems.debut = items.length - 4;
+                AllItems.debut = taille - 4;
             } else {
                 AllItems.debut -= 4;
             }
@@ -78,7 +80,7 @@ export default class AllItems {
         });
 
         document.getElementById('next').addEventListener('click', () => {
-            if (AllItems.debut >= items.length - 4) {
+            if (AllItems.debut >= taille - 4) {
                 AllItems.debut = 0;
             } else {
                 AllItems.debut += 4;

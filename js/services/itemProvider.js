@@ -37,16 +37,14 @@ export default class ItemProvider {
             const response = await fetch(url, options);
             const json = await response.json();
 
-            console.log("Type item : " + type);
-
-            const filterItemsType = json.filter(item =>
-                item.type.toLowerCase().includes(type.toLowerCase())
+            const filterItemsType = json.filter(items =>
+                items.type.toLowerCase().includes(type)
             );
 
-            const filterItemsName = filterItemsType.filter(item =>
-                item.nom.toLowerCase().includes(nomSearch)
+            const filterItemsName = filterItemsType.filter(items =>
+                items.nom.toLowerCase().includes(nomSearch)
             );
-
+            
             const paginationItems = filterItemsName.slice(start, start + limit);
 
             return paginationItems;
@@ -54,4 +52,33 @@ export default class ItemProvider {
             console.log('Error getting items by type\n', err);
         }
     }
+
+    static getTaille = async (type="") => {
+            const options = {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            };
+            try {
+                let nomSearch = AllItems.nom ? AllItems.nom.toLowerCase() : "";
+                const response = await fetch(`${ENDPOINT}/items`, options);
+                const json = await response.json();
+
+        
+                const filterItemsType = json.filter(items =>
+                    items.type.toLowerCase().includes(type)
+                );
+    
+                const filterItemsName = filterItemsType.filter(items =>
+                    items.nom.toLowerCase().includes(nomSearch)
+                );
+
+                console.log("test : " + filterItemsName)
+        
+                return filterItemsName.length;
+            } catch (err) {
+                console.log('Error getting documents\n', err);
+            }
+        };
 }

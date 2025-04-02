@@ -33,8 +33,6 @@ export const router = async () => {
     }
 
     if (page === AllItems) {
-        const resource = Utils.parseRequestURL();
-        AllItems.type = resource.id || '';
         await page.renderScript();
     }
 }
