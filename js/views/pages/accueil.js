@@ -6,6 +6,7 @@ export default class Accueil {
             <ul>
                 <li><a href="http://localhost:8000/#/characters">Les characters</a></li>
                 <li><a href="http://localhost:8000/#/items">Les items</a></li>
+                <li><a href="http://localhost:8000/#/favorites">Mes favoris</a></li>
             </ul>
         </section>
         `

@@ -1,5 +1,7 @@
 import Utils from '../../services/utils.js';
 import CharacterProvider from '../../services/provider.js';
+import { router } from '../../app.js';
+
 
 export default class ShowCharacter {
     static async render(){
@@ -25,6 +27,15 @@ export default class ShowCharacter {
             </li>
         `).join('');
 
+        let buttonFav = () => {
+            let characters = JSON.parse(localStorage.getItem('favCharacters') || '[]')
+            if (localStorage.getItem('favCharacters') === null ||  !characters.includes(character.id)) {
+                return `<button id="addToFav">Ajouter aux favoris</button>`;
+            } else {
+                return `<button id="removeFromFav">Retirer des favoris</button>`;
+            }
+        }
+
         return `
             <section class="character">
                 <h2>${character.nom}</h2>
@@ -34,6 +45,7 @@ export default class ShowCharacter {
                 <ul>
                     ${caracteristiques}
                 </ul>
+                ${buttonFav()}
                 <h2>Note</h2>
                 <ul>
                     ${ratings}
@@ -43,5 +55,24 @@ export default class ShowCharacter {
                 </ul>
             </section>
         `;
+    }
+
+    static async renderScript() {
+        let request = Utils.parseRequestURL();
+        let character = await CharacterProvider.getCharacter(request.id);
+
+        if (document.getElementById('addToFav') != null) {
+            document.getElementById('addToFav').addEventListener('click', () => {
+                Utils.addFavoriteCharacter(character.id);
+                router();
+            });
+        }
+
+        if (document.getElementById('removeFromFav') != null) {
+            document.getElementById('removeFromFav').addEventListener('click', () => {
+                Utils.removeFavoriteCharacter(character.id);
+                router();
+            });
+        }
     }
 }

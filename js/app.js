@@ -5,6 +5,7 @@ import AllItems from "./views/pages/allItems.js";
 import ShowItem from "./views/pages/showItem.js";
 import Error404 from "./views/pages/error404.js";
 import Accueil from "./views/pages/accueil.js";
+import AllFavorites from "./views/pages/allFavorites.js";
 
 const routes = {
     '/': Accueil,
@@ -12,6 +13,7 @@ const routes = {
     '/characters/:id': ShowCharacter,
     '/items': AllItems,
     '/items/:id': ShowItem,
+    '/favorites': AllFavorites,
     '/404': Error404
 };
 
@@ -28,9 +30,16 @@ export const router = async () => {
     
     content.innerHTML = await page.render();
 
-    if (page === AllCharacters) {
+    if (page === AllCharacters || page === AllFavorites || page === ShowCharacter || page === ShowItem) {
         await page.renderScript();
     }
+}
+
+if (localStorage.getItem('favCharacters') === null) {
+    localStorage.setItem('favCharacters', []);
+}
+if (localStorage.getItem('favItems') === null) {
+    localStorage.setItem('favItems', []);
 }
 
 window.addEventListener('load', router);
