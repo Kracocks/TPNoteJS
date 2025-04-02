@@ -15,21 +15,22 @@ const routes = {
     '/404': Error404
 };
 
-const router = async () => {
+export const router = async () => {
     const content = null || document.querySelector('#content');
 
     let resource = Utils.parseRequestURL();
-    console.log("Requete : " . resource)
 
     let parsedURL = (resource.resource ? '/' + resource.resource : '/') +
     (resource.id ? '/:id' : '') +
     (resource.verb ? '/' + resource.verb : '');
 
-    console.log(parsedURL)
     let page = routes[parsedURL] ? routes[parsedURL] : routes['/error404'];
-    console.log("Page : ", page)
     
     content.innerHTML = await page.render();
+
+    if (page === AllCharacters) {
+        await page.renderScript();
+    }
 }
 
 window.addEventListener('load', router);
