@@ -1,0 +1,121 @@
+.charactersFavorites, .itemsFavorites {
+    padding: 20px;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.charactersFavorites h2, .itemsFavorites h2 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.charactersFavorites ul, .itemsFavorites ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.charactersFavorites li, .itemsFavorites li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 200px;
+    height: 330px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.charactersFavorites li:hover, .itemsFavorites li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.charactersFavorites a, .itemsFavorites a {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    padding: 10px;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.charactersFavorites a span, .itemsFavorites a span {
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #333;
+    padding: 5px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    white-space: normal;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.charactersFavorites a:hover, .itemsFavorites a:hover {
+    color: #007BFF;
+}
+
+.charactersFavorites img, .itemsFavorites img {
+    width: 100%;
+    height: 80%;
+    object-fit: contain;
+    flex-shrink: 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.charactersFavorites .button-container, .itemsFavorites .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.charactersFavorites button, .itemsFavorites button {
+    background-color: #606060;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.charactersFavorites button:hover, .itemsFavorites button:hover {
+    background-color: #0056b3;
+}
+
+.charactersFavorites button:disabled, .itemsFavorites button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.charactersFavorites .counter, .itemsFavorites .counter {
+    font-size: 14px;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

@@ -31,7 +31,7 @@ export default class ShowCharacter {
 
         let caracteristiques = Object.entries(character.caracteristique).map(([key, value]) => `
             <li>
-                <p>${key} -> ${value}</p>
+                <p>${key} => ${value}</p>
             </li>
         `).join('');
 

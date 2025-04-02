@@ -1,351 +1,350 @@
 {
-    "characters": [
-        {
-            "id": "1",
-            "nom": "Steve (Minecraft)",
-            "description": "Un aventurier cubique capable de miner, construire et survivre dans un monde infini.",
-            "caracteristique": {
-                "force": 50,
-                "endurance": 80,
-                "agilite": 60,
-                "intelligence": 50
-            },
-            "note": 2
-        },
-        {
-            "id": "2",
-            "nom": "The Trapper (Dead by Daylight)",
-            "description": "Un tueur brutal utilisant des pièges à ours pour immobiliser ses victimes.",
-            "caracteristique": {
-                "force": 90,
-                "endurance": 85,
-                "agilite": 40,
-                "intelligence": 30
-            },
-            "note": 0
-        },
-        {
-            "id": "3",
-            "nom": "Doomslayer (Doom Dark Age)",
-            "description": "Un guerrier surpuissant, exterminateur de démons sans pitié.",
-            "caracteristique": {
-                "force": 100,
-                "endurance": 95,
-                "agilite": 80,
-                "intelligence": 70
-            },
-            "note": 0
-        },
-        {
-            "id": "4",
-            "nom": "Hitman (Hitman)",
-            "description": "Un assassin silencieux, maître du déguisement et de l'infiltration.",
-            "caracteristique": {
-                "force": 70,
-                "endurance": 75,
-                "agilite": 85,
-                "intelligence": 90
-            },
-            "note": 0
-        },
-        {
-            "id": "5",
-            "nom": "Mewtwo (Pokémon)",
-            "description": "Un Pokémon légendaire surpuissant doté de pouvoirs psychiques dévastateurs.",
-            "caracteristique": {
-                "force": 80,
-                "endurance": 70,
-                "agilite": 90,
-                "intelligence": 100
-            },
-            "note": 0
-        },
-        {
-            "id": "6",
-            "nom": "Pathfinder (Apex Legends)",
-            "description": "Un robot optimiste équipé d'un grappin pour une mobilité extrême.",
-            "caracteristique": {
-                "force": 60,
-                "endurance": 80,
-                "agilite": 95,
-                "intelligence": 60
-            },
-            "note": 0
-        },
-        {
-            "id": "7",
-            "nom": "Sung Jin-Woo (Solo Leveling)",
-            "description": "Un chasseur pouvant invoquer une armée d'ombres et devenir plus fort sans limite.",
-            "caracteristique": {
-                "force": 100,
-                "endurance": 100,
-                "agilite": 100,
-                "intelligence": 90
-            },
-            "note": 0
-        },
-        {
-            "id": "8",
-            "nom": "Corvo Attano (Dishonored)",
-            "description": "Un assassin surnaturel maniant l'épée et la magie pour se venger.",
-            "caracteristique": {
-                "force": 70,
-                "endurance": 65,
-                "agilite": 90,
-                "intelligence": 85
-            },
-            "note": 0
-        },
-        {
-            "id": "9",
-            "nom": "Andrew Ryan (Bioshock)",
-            "description": "Un visionnaire déchu et créateur de la ville sous-marine Rapture.",
-            "caracteristique": {
-                "force": 30,
-                "endurance": 40,
-                "agilite": 20,
-                "intelligence": 95
-            },
-            "note": 0
-        },
-        {
-            "id": "10",
-            "nom": "Colonist (RimWorld)",
-            "description": "Un survivant improvisé essayant de bâtir une colonie dans un monde hostile.",
-            "caracteristique": {
-                "force": 50,
-                "endurance": 60,
-                "agilite": 50,
-                "intelligence": 70
-            },
-            "note": 0
-        },
-        {
-            "id": "11",
-            "nom": "Dora (Dora et la Princesse des Neiges)",
-            "description": "Une exploratrice curieuse et bienveillante toujours prête à aider.",
-            "caracteristique": {
-                "force": 20,
-                "endurance": 50,
-                "agilite": 60,
-                "intelligence": 80
-            },
-            "note": 0
-        },
-        {
-            "id": "12",
-            "nom": "V1 (Ultrakill)",
-            "description": "Un robot ultra-rapide alimenté par le sang de ses ennemis.",
-            "caracteristique": {
-                "force": 90,
-                "endurance": 100,
-                "agilite": 100,
-                "intelligence": 70
-            },
-            "note": 0
-        }
-    ],
-    "items": [
-        {
-            "id": "1",
-            "nom": "Casque du Slayer",
-            "description": "Le casque indestructible du Doomslayer, offrant une meilleure endurance.",
-            "type": "casque",
-            "caracteristique": {
-                "endurance": 10
-            },
-            "note": 0
-        },
-        {
-            "id": "2",
-            "nom": "Masque de Corvo",
-            "description": "Un couvre-chef élégant imprégné d'une aura mystique, améliorant l'agilité.",
-            "type": "casque",
-            "caracteristique": {
-                "agilite": 8
-            },
-            "note": 0
-        },
-        {
-            "id": "3",
-            "nom": "Casque du Helldiver",
-            "description": "Un casque tactique utilisé par les Helldivers, renforçant la force brute.",
-            "type": "casque",
-            "caracteristique": {
-                "force": 12
-            },
-            "note": 0
-        },
-        {
-            "id": "4",
-            "nom": "Masque à gaz",
-            "description": "Un casque rudimentaire pour la survie, augmentant légèrement l'endurance.",
-            "type": "casque",
-            "caracteristique": {
-                "endurance": 7
-            },
-            "note": 0
-        },
-        {
-            "id": "5",
-            "nom": "Plastron de Netherite",
-            "description": "Une armure solide et résistante de Minecraft, améliorant l'endurance.",
-            "type": "plastron",
-            "caracteristique": {
-                "endurance": 12
-            },
-            "note": 0
-        },
-        {
-            "id": "6",
-            "nom": "Exo-Plastron de la Fédération",
-            "description": "Un plastron d'une incroyable robustesse, bourré de technologie, boostant l'intelligence.",
-            "type": "plastron",
-            "caracteristique": {
-                "intelligence": 15
-            },
-            "note": 0
-        },
-        {
-            "id": "7",
-            "nom": "Veste de l'assassin",
-            "description": "Une veste simple et souple offrant plus d'agilité pour l'infiltration.",
-            "type": "plastron",
-            "caracteristique": {
-                "agilite": 8
-            },
-            "note": 0
-        },
-        {
-            "id": "8",
-            "nom": "Plastron de Dragonborn",
-            "description": "Un plastron en écailles de dragon forgé à partir des vestiges des dragons déchus, offrant une protection magique et physique.",
-            "type": "plastron",
-            "caracteristique": {
-                "force": 12
-            },
-            "note": 0
-        },
-        
-        {
-            "id": "9",
-            "nom": "Pantalon en diamant",
-            "description": "Un pantalon renforcé qui protège son utilisateur.",
-            "type": "pantalon",
-            "caracteristique": {
-                "endurance": 10
-            },
-            "note": 0
-        },
-        {
-            "id": "10",
-            "nom": "Jambe robotisé",
-            "description": "Des jambes renforcé offrant une incroyable force.",
-            "type": "pantalon",
-            "caracteristique": {
-                "force": 13
-            },
-            "note": 0
-        },
-        {
-            "id": "11",
-            "nom": "Pantalon d'assassin",
-            "description": "Un pantalon souple qui ne réduise pas les mouvements",
-            "type": "pantalon",
-            "caracteristique": {
-                "agilite": 9
-            },
-            "note": 0
-        },
-        {
-            "id": "12",
-            "nom": "Exosquelette",
-            "description": "Exosquelette caractérisant le peu d'effort à forunir pour marcher.",
-            "type": "pantalon",
-            "caracteristique": {
-                "agilite": 13
-            },
-            "note": 0
-        },
-        {
-            "id": "13",
-            "nom": "Bottes en cuir du Voyageur Cubique",
-            "description": "Des bottes de cuir portées par Steve, améliorant l'endurance.",
-            "type": "bottes",
-            "caracteristique": {
-                "endurance": 7
-            },
-            "note": 0
-        },
-        {
-            "id": "14",
-            "nom": "Bottes gravitationnelles",
-            "description": "Bottes boostant la circulation et améliorant les capacités psychiques.",
-            "type": "bottes",
-            "caracteristique": {
-                "intelligence": 12
-            },
-            "note": 0
-        },
-        {
-            "id": "15",
-            "nom": "Bottes de Tracer",
-            "description": "Des bottes ayant voyagé dans le temps et l'espace, augmentant l'agilité.",
-            "type": "bottes",
-            "caracteristique": {
-                "agilite": 15
-            },
-            "note": 0
-        },
-        {
-            "id": "16",
-            "nom": "Bottes simples",
-            "description": "Des bottes pour marcher de longue heures.",
-            "type": "bottes",
-            "caracteristique": {
-                "endurance": 8
-            },
-            "note": 0
-        },
-        {
-            "id": "17",
-            "nom": "Épée de l'Ombre",
-            "description": "Une lame surpuissante maniée par Sung Jin-Woo, augmentant la force.",
-            "type": "arme",
-            "caracteristique": {
-                "force": 15
-            },
-            "note": 0
-        },
-        {
-            "id": "18",
-            "nom": "Pelle en Diamant",
-            "description": "Un outil emblématique de Minecraft, apportant un petit boost d'endurance.",
-            "type": "arme",
-            "caracteristique": {
-                "endurance": 8
-            },
-            "note": 0
-        },
-        {
-            "id": "19",
-            "nom": "Mystérieux Grimoires",
-            "description": "Un grimoire antique renfermant des secrets insondables, améliorant l'intelligence.",
-            "type": "arme",
-            "caracteristique": {
-                "intelligence": 14
-            },
-            "note": 0
-        },
-        {
-            "id": "20",
-            "nom": "Pistolet Silencieux",
-            "description": "Un pistolet iconique de l'Agent 47, simple mais efficace.",
-            "type": "arme",
-            "caracteristique": {
-                "force": 8
-            },
-            "note": 0
-        }
-    ]
+  "characters": [
+    {
+      "id": "1",
+      "nom": "Steve (Minecraft)",
+      "description": "Un aventurier cubique capable de miner, construire et survivre dans un monde infini.",
+      "caracteristique": {
+        "force": 50,
+        "endurance": 80,
+        "agilite": 60,
+        "intelligence": 50
+      },
+      "note": 2
+    },
+    {
+      "id": "2",
+      "nom": "The Trapper (Dead by Daylight)",
+      "description": "Un tueur brutal utilisant des pièges à ours pour immobiliser ses victimes.",
+      "caracteristique": {
+        "force": 90,
+        "endurance": 85,
+        "agilite": 40,
+        "intelligence": 30
+      },
+      "note": 0
+    },
+    {
+      "id": "3",
+      "nom": "Doomslayer (Doom Dark Age)",
+      "description": "Un guerrier surpuissant, exterminateur de démons sans pitié.",
+      "caracteristique": {
+        "force": 100,
+        "endurance": 95,
+        "agilite": 80,
+        "intelligence": 70
+      },
+      "note": 2.1873425646917894
+    },
+    {
+      "id": "4",
+      "nom": "Hitman (Hitman)",
+      "description": "Un assassin silencieux, maître du déguisement et de l'infiltration.",
+      "caracteristique": {
+        "force": 70,
+        "endurance": 75,
+        "agilite": 85,
+        "intelligence": 90
+      },
+      "note": 0
+    },
+    {
+      "id": "5",
+      "nom": "Mewtwo (Pokémon)",
+      "description": "Un Pokémon légendaire surpuissant doté de pouvoirs psychiques dévastateurs.",
+      "caracteristique": {
+        "force": 80,
+        "endurance": 70,
+        "agilite": 90,
+        "intelligence": 100
+      },
+      "note": 0
+    },
+    {
+      "id": "6",
+      "nom": "Pathfinder (Apex Legends)",
+      "description": "Un robot optimiste équipé d'un grappin pour une mobilité extrême.",
+      "caracteristique": {
+        "force": 60,
+        "endurance": 80,
+        "agilite": 95,
+        "intelligence": 60
+      },
+      "note": 0
+    },
+    {
+      "id": "7",
+      "nom": "Sung Jin-Woo (Solo Leveling)",
+      "description": "Un chasseur pouvant invoquer une armée d'ombres et devenir plus fort sans limite.",
+      "caracteristique": {
+        "force": 100,
+        "endurance": 100,
+        "agilite": 100,
+        "intelligence": 90
+      },
+      "note": 0
+    },
+    {
+      "id": "8",
+      "nom": "Corvo Attano (Dishonored)",
+      "description": "Un assassin surnaturel maniant l'épée et la magie pour se venger.",
+      "caracteristique": {
+        "force": 70,
+        "endurance": 65,
+        "agilite": 90,
+        "intelligence": 85
+      },
+      "note": 0
+    },
+    {
+      "id": "9",
+      "nom": "Andrew Ryan (Bioshock)",
+      "description": "Un visionnaire déchu et créateur de la ville sous-marine Rapture.",
+      "caracteristique": {
+        "force": 30,
+        "endurance": 40,
+        "agilite": 20,
+        "intelligence": 95
+      },
+      "note": 0
+    },
+    {
+      "id": "10",
+      "nom": "Colonist (RimWorld)",
+      "description": "Un survivant improvisé essayant de bâtir une colonie dans un monde hostile.",
+      "caracteristique": {
+        "force": 50,
+        "endurance": 60,
+        "agilite": 50,
+        "intelligence": 70
+      },
+      "note": 0
+    },
+    {
+      "id": "11",
+      "nom": "Dora (Dora et la Princesse des Neiges)",
+      "description": "Une exploratrice curieuse et bienveillante toujours prête à aider.",
+      "caracteristique": {
+        "force": 20,
+        "endurance": 50,
+        "agilite": 60,
+        "intelligence": 80
+      },
+      "note": 0
+    },
+    {
+      "id": "12",
+      "nom": "V1 (Ultrakill)",
+      "description": "Un robot ultra-rapide alimenté par le sang de ses ennemis.",
+      "caracteristique": {
+        "force": 90,
+        "endurance": 100,
+        "agilite": 100,
+        "intelligence": 70
+      },
+      "note": 0
+    }
+  ],
+  "items": [
+    {
+      "id": "1",
+      "nom": "Casque du Slayer",
+      "description": "Le casque indestructible du Doomslayer, offrant une meilleure endurance.",
+      "type": "casque",
+      "caracteristique": {
+        "endurance": 10
+      },
+      "note": 0
+    },
+    {
+      "id": "2",
+      "nom": "Masque de Corvo",
+      "description": "Un couvre-chef élégant imprégné d'une aura mystique, améliorant l'agilité.",
+      "type": "casque",
+      "caracteristique": {
+        "agilite": 8
+      },
+      "note": 2.25
+    },
+    {
+      "id": "3",
+      "nom": "Casque du Helldiver",
+      "description": "Un casque tactique utilisé par les Helldivers, renforçant la force brute.",
+      "type": "casque",
+      "caracteristique": {
+        "force": 12
+      },
+      "note": 0
+    },
+    {
+      "id": "4",
+      "nom": "Masque à gaz",
+      "description": "Un casque rudimentaire pour la survie, augmentant légèrement l'endurance.",
+      "type": "casque",
+      "caracteristique": {
+        "endurance": 7
+      },
+      "note": 0
+    },
+    {
+      "id": "5",
+      "nom": "Plastron de Netherite",
+      "description": "Une armure solide et résistante de Minecraft, améliorant l'endurance.",
+      "type": "plastron",
+      "caracteristique": {
+        "endurance": 12
+      },
+      "note": 0
+    },
+    {
+      "id": "6",
+      "nom": "Exo-Plastron de la Fédération",
+      "description": "Un plastron d'une incroyable robustesse, bourré de technologie, boostant l'intelligence.",
+      "type": "plastron",
+      "caracteristique": {
+        "intelligence": 15
+      },
+      "note": 0
+    },
+    {
+      "id": "7",
+      "nom": "Veste de l'assassin",
+      "description": "Une veste simple et souple offrant plus d'agilité pour l'infiltration.",
+      "type": "plastron",
+      "caracteristique": {
+        "agilite": 8
+      },
+      "note": 0
+    },
+    {
+      "id": "8",
+      "nom": "Plastron de Dragonborn",
+      "description": "Un plastron en écailles de dragon forgé à partir des vestiges des dragons déchus, offrant une protection magique et physique.",
+      "type": "plastron",
+      "caracteristique": {
+        "force": 12
+      },
+      "note": 0
+    },
+    {
+      "id": "9",
+      "nom": "Pantalon en diamant",
+      "description": "Un pantalon renforcé qui protège son utilisateur.",
+      "type": "pantalon",
+      "caracteristique": {
+        "endurance": 10
+      },
+      "note": 0
+    },
+    {
+      "id": "10",
+      "nom": "Jambe robotisé",
+      "description": "Des jambes renforcé offrant une incroyable force.",
+      "type": "pantalon",
+      "caracteristique": {
+        "force": 13
+      },
+      "note": 0
+    },
+    {
+      "id": "11",
+      "nom": "Pantalon d'assassin",
+      "description": "Un pantalon souple qui ne réduise pas les mouvements",
+      "type": "pantalon",
+      "caracteristique": {
+        "agilite": 9
+      },
+      "note": 0
+    },
+    {
+      "id": "12",
+      "nom": "Exosquelette",
+      "description": "Exosquelette caractérisant le peu d'effort à forunir pour marcher.",
+      "type": "pantalon",
+      "caracteristique": {
+        "agilite": 13
+      },
+      "note": 0
+    },
+    {
+      "id": "13",
+      "nom": "Bottes en cuir du Voyageur Cubique",
+      "description": "Des bottes de cuir portées par Steve, améliorant l'endurance.",
+      "type": "bottes",
+      "caracteristique": {
+        "endurance": 7
+      },
+      "note": 0
+    },
+    {
+      "id": "14",
+      "nom": "Bottes gravitationnelles",
+      "description": "Bottes boostant la circulation et améliorant les capacités psychiques.",
+      "type": "bottes",
+      "caracteristique": {
+        "intelligence": 12
+      },
+      "note": 0
+    },
+    {
+      "id": "15",
+      "nom": "Bottes de Tracer",
+      "description": "Des bottes ayant voyagé dans le temps et l'espace, augmentant l'agilité.",
+      "type": "bottes",
+      "caracteristique": {
+        "agilite": 15
+      },
+      "note": 0
+    },
+    {
+      "id": "16",
+      "nom": "Bottes simples",
+      "description": "Des bottes pour marcher de longue heures.",
+      "type": "bottes",
+      "caracteristique": {
+        "endurance": 8
+      },
+      "note": 0
+    },
+    {
+      "id": "17",
+      "nom": "Épée de l'Ombre",
+      "description": "Une lame surpuissante maniée par Sung Jin-Woo, augmentant la force.",
+      "type": "arme",
+      "caracteristique": {
+        "force": 15
+      },
+      "note": 0
+    },
+    {
+      "id": "18",
+      "nom": "Pelle en Diamant",
+      "description": "Un outil emblématique de Minecraft, apportant un petit boost d'endurance.",
+      "type": "arme",
+      "caracteristique": {
+        "endurance": 8
+      },
+      "note": 0
+    },
+    {
+      "id": "19",
+      "nom": "Mystérieux Grimoires",
+      "description": "Un grimoire antique renfermant des secrets insondables, améliorant l'intelligence.",
+      "type": "arme",
+      "caracteristique": {
+        "intelligence": 14
+      },
+      "note": 0
+    },
+    {
+      "id": "20",
+      "nom": "Pistolet Silencieux",
+      "description": "Un pistolet iconique de l'Agent 47, simple mais efficace.",
+      "type": "arme",
+      "caracteristique": {
+        "force": 8
+      },
+      "note": 0
+    }
+  ]
 }
