@@ -10,7 +10,8 @@
         "agilite": 60,
         "intelligence": 50
       },
-      "note": 2
+      "note": 0,
+      "nbnote": 0
     },
     {
       "id": "2",
@@ -22,7 +23,8 @@
         "agilite": 40,
         "intelligence": 30
       },
-      "note": 0
+      "note": 0,
+      "nbnote": 0
     },
     {
       "id": "3",
@@ -34,7 +36,8 @@
         "agilite": 80,
         "intelligence": 70
       },
-      "note": 2.1873425646917894
+      "note": 0,
+      "nbnote": 0
     },
     {
       "id": "4",
@@ -46,7 +49,8 @@
         "agilite": 85,
         "intelligence": 90
       },
-      "note": 0
+      "note": 0,
+      "nbnote": 0
     },
     {
       "id": "5",
@@ -58,7 +62,8 @@
         "agilite": 90,
         "intelligence": 100
       },
-      "note": 0
+      "note": 0,
+      "nbnote": 0
     },
     {
       "id": "6",
@@ -70,7 +75,8 @@
         "agilite": 95,
         "intelligence": 60
       },
-      "note": 0
+      "note": 0,
+      "nbnote": 0
     },
     {
       "id": "7",
@@ -82,7 +88,8 @@
         "agilite": 100,
         "intelligence": 90
       },
-      "note": 0
+      "note": 0,
+      "nbnote": 0
     },
     {
       "id": "8",
@@ -94,7 +101,8 @@
         "agilite": 90,
         "intelligence": 85
       },
-      "note": 0
+      "note": 0,
+      "nbnote": 0
     },
     {
       "id": "9",
@@ -106,7 +114,8 @@
         "agilite": 20,
         "intelligence": 95
       },
-      "note": 0
+      "note": 0,
+      "nbnote": 0
     },
     {
       "id": "10",
@@ -118,7 +127,8 @@
         "agilite": 50,
         "intelligence": 70
       },
-      "note": 0
+      "note": 0,
+      "nbnote": 0
     },
     {
       "id": "11",
@@ -130,7 +140,8 @@
         "agilite": 60,
         "intelligence": 80
       },
-      "note": 0
+      "note": 0,
+      "nbnote": 0
     },
     {
       "id": "12",
@@ -142,7 +153,8 @@
         "agilite": 100,
         "intelligence": 70
       },
-      "note": 0
+      "note": 0,
+      "nbnote": 0
     }
   ],
   "items": [
@@ -154,7 +166,8 @@
       "caracteristique": {
         "endurance": 10
       },
-      "note": 0
+      "note": 0,
+      "nbnote": 0
     },
     {
       "id": "2",
@@ -164,7 +177,8 @@
       "caracteristique": {
         "agilite": 8
       },
-      "note": 2.25
+      "note": 0,
+      "nbnote": 0
     },
     {
       "id": "3",
@@ -174,7 +188,8 @@
       "caracteristique": {
         "force": 12
       },
-      "note": 0
+      "note": 0,
+      "nbnote": 0
     },
     {
       "id": "4",
@@ -184,7 +199,8 @@
       "caracteristique": {
         "endurance": 7
       },
-      "note": 0
+      "note": 0,
+      "nbnote": 0
     },
     {
       "id": "5",
@@ -194,7 +210,8 @@
       "caracteristique": {
         "endurance": 12
       },
-      "note": 0
+      "note": 0,
+      "nbnote": 0
     },
     {
       "id": "6",
@@ -204,7 +221,8 @@
       "caracteristique": {
         "intelligence": 15
       },
-      "note": 0
+      "note": 0,
+      "nbnote": 0
     },
     {
       "id": "7",
@@ -214,7 +232,8 @@
       "caracteristique": {
         "agilite": 8
       },
-      "note": 0
+      "note": 0,
+      "nbnote": 0
     },
     {
       "id": "8",
@@ -224,7 +243,8 @@
       "caracteristique": {
         "force": 12
       },
-      "note": 0
+      "note": 0,
+      "nbnote": 0
     },
     {
       "id": "9",
@@ -234,7 +254,8 @@
       "caracteristique": {
         "endurance": 10
       },
-      "note": 0
+      "note": 0,
+      "nbnote": 0
     },
     {
       "id": "10",
@@ -244,7 +265,8 @@
       "caracteristique": {
         "force": 13
       },
-      "note": 0
+      "note": 0,
+      "nbnote": 0
     },
     {
       "id": "11",
@@ -254,7 +276,8 @@
       "caracteristique": {
         "agilite": 9
       },
-      "note": 0
+      "note": 0,
+      "nbnote": 0
     },
     {
       "id": "12",
@@ -264,7 +287,8 @@
       "caracteristique": {
         "agilite": 13
       },
-      "note": 0
+      "note": 0,
+      "nbnote": 0
     },
     {
       "id": "13",
@@ -274,7 +298,8 @@
       "caracteristique": {
         "endurance": 7
       },
-      "note": 0
+      "note": 0,
+      "nbnote": 0
     },
     {
       "id": "14",
@@ -284,7 +309,8 @@
       "caracteristique": {
         "intelligence": 12
       },
-      "note": 0
+      "note": 0,
+      "nbnote": 0
     },
     {
       "id": "15",
@@ -294,7 +320,8 @@
       "caracteristique": {
         "agilite": 15
       },
-      "note": 0
+      "note": 0,
+      "nbnote": 0
     },
     {
       "id": "16",
@@ -304,7 +331,8 @@
       "caracteristique": {
         "endurance": 8
       },
-      "note": 0
+      "note": 0,
+      "nbnote": 0
     },
     {
       "id": "17",
@@ -314,7 +342,8 @@
       "caracteristique": {
         "force": 15
       },
-      "note": 0
+      "note": 0,
+      "nbnote": 0
     },
     {
       "id": "18",
@@ -324,7 +353,8 @@
       "caracteristique": {
         "endurance": 8
       },
-      "note": 0
+      "note": 0,
+      "nbnote": 0
     },
     {
       "id": "19",
@@ -334,7 +364,8 @@
       "caracteristique": {
         "intelligence": 14
       },
-      "note": 0
+      "note": 0,
+      "nbnote": 0
     },
     {
       "id": "20",
@@ -344,7 +375,8 @@
       "caracteristique": {
         "force": 8
       },
-      "note": 0
+      "note": 0,
+      "nbnote": 0
     }
   ]
 }
