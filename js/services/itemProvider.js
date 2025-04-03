@@ -67,7 +67,7 @@ export default class ItemProvider {
     static updateNote = async (item, note) => {
         let newNote = note;
         if (item.note !== 0) {
-            newNote = (item.note + note) / 2;
+            newNote = (item.note * item.nbnote + note) / (item.nbnote+1);
         }
         console.log(newNote);
         const options = {
@@ -76,7 +76,8 @@ export default class ItemProvider {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                note: newNote
+                note: newNote,
+                nbnote: item.nbnote+1
             })
         };
         try {

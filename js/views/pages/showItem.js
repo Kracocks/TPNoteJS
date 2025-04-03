@@ -92,6 +92,7 @@ export default class ShowItem {
                 let note = document.querySelector(`input[name="note-${item.id}"]:checked`);
                 if (note) {
                     ItemProvider.updateNote(item, parseInt(note.value));
+                    console.log(item.note, item.nbnote)
                     router();
                 } else {
                     alert('Veuillez choisir une note');

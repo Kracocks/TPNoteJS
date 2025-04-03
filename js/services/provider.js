@@ -84,7 +84,7 @@ export default class CharacterProvider {
     static updateNote = async (character, note) => {
         let newNote = note;
         if (character.note !== 0) {
-            newNote = (character.note + note) / 2;
+            newNote = (character.note * character.note + note) / (character.nbnote+1);
         }
         const options = {
             method: 'PATCH',
@@ -92,7 +92,8 @@ export default class CharacterProvider {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                note: newNote
+                note: newNote,
+                nbnote: character.nbnote+1
             })
         };
         try {
