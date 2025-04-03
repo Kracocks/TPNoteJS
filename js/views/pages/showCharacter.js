@@ -29,7 +29,7 @@ export default class ShowCharacter {
             return '';
         }
 
-        let caracteristiques = Object.entries(character.caracteristique).map(([key, value]) => `
+        let caracteristiques = Object.entries(character.caracteristiques).map(([key, value]) => `
             <li>
                 <p>${key} => ${value}</p>
             </li>

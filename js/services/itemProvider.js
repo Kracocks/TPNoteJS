@@ -13,7 +13,7 @@ export default class ItemProvider {
         try {
             const response = await fetch(`${ENDPOINT}/items/` + id, options);
             const json = await response.json();
-            let i = new Item(json.id, json.nom, json.description, json.type, json.note);
+            let i = new Item(json.id, json.nom, json.description, json.type, json.note, json.nbnote);
             Object.entries(json.caracteristique).map(([key, value]) => {
                 i.addCarac(key, value)
             });
@@ -47,7 +47,18 @@ export default class ItemProvider {
             
             const paginationItems = filterItemsName.slice(start, start + limit);
 
-            return paginationItems;
+            let res = []
+            paginationItems.forEach(itemElement => {
+                let i = new Item(itemElement.id, itemElement.nom, itemElement.description, itemElement.type, itemElement.note, itemElement.nbnote);
+                Object.entries(itemElement.caracteristique).map(([key, value]) => {
+                    i.addCarac(key, value)
+                });
+                res.push(i);
+            });
+
+            console.log(res)
+
+            return res;
         } catch (err) {
             console.log('Error getting items by type\n', err);
         }
