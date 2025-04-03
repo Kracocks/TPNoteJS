@@ -9,8 +9,8 @@ export default class AllCharacters {
         let characters = await CharacterProvider.fetchCharacters(4, AllCharacters.debut);
         let view = `
             <section class="characters">
-                <h2>Les characters</h2>
-                <input id="search-bar" type="text" placeholder="Rechercher un personnage" />
+                <h2>Les personnages</h2>
+                <input id="search-bar" type="text" placeholder="Rechercher un personnage" value="${AllCharacters.nom}"/>
                 <button id="search">Valider</button>
                 <ul>
                     ${characters.map((character) => {
@@ -83,10 +83,17 @@ export default class AllCharacters {
         document.getElementById('next').addEventListener('click', updateCounter);
 
         document.getElementById('search').addEventListener('click', () => {
-            let recherche = document.getElementById('search-bar').value;
-            AllCharacters.nom = recherche;
+            AllCharacters.nom = document.getElementById('search-bar').value;
             AllCharacters.debut = 0;
             router();
-        })
+        });
+
+        document.getElementById('search-bar').addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                AllCharacters.nom = document.getElementById('search-bar').value;
+                AllCharacters.debut = 0;
+                router();
+            }
+        });
     }
 }
