@@ -87,9 +87,9 @@ export default class ShowCharacter {
 
         if (document.getElementById('noterCharacter') != null) {
             document.getElementById('noterCharacter').addEventListener('click', () => {
-                let note = document.querySelector(`input[name="note-${character.id}"]:checked`);
-                if (note) {
-                    CharacterProvider.updateNote(character, parseInt(note.value));
+                let newnote = document.querySelector(`input[name="note-${character.id}"]:checked`);
+                if (newnote) {
+                    CharacterProvider.updateNote(character, parseInt(newnote.value));
                     router();
                 } else {
                     alert('Veuillez choisir une note');

@@ -6,7 +6,7 @@ export default class Character {
         this._caracteristiques = {};
         this._items = [];
         this._note = note;
-        this._nbnote;
+        this._nbnote = nbnote;
     }
 
     // ID

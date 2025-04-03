@@ -69,7 +69,6 @@ export default class ItemProvider {
         if (item.note !== 0) {
             newNote = (item.note * item.nbnote + note) / (item.nbnote+1);
         }
-        console.log(newNote);
         const options = {
             method: 'PATCH',
             headers: {

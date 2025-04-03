@@ -49,7 +49,7 @@ export default class CharacterProvider {
             const response = await fetch(`${ENDPOINT}/characters/` + id, options);
             const json = await response.json();
 
-            let c = new Character(json.id, json.nom, json.description, json.type, json.note, json.nbnote);
+            let c = new Character(json.id, json.nom, json.description, json.note, json.nbnote);
             Object.entries(json.caracteristique).map(([key, value]) => {
                 c.addCarac(key, value)
             });
@@ -84,7 +84,7 @@ export default class CharacterProvider {
     static updateNote = async (character, note) => {
         let newNote = note;
         if (character.note !== 0) {
-            newNote = (character.note * character.note + note) / (character.nbnote+1);
+            newNote = (character.note * character.nbnote + note) / (character.nbnote+1);
         }
         const options = {
             method: 'PATCH',
