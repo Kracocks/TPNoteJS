@@ -31,7 +31,7 @@ export default class ShowItem {
 
         let caracteristiques = Object.entries(item.caracteristiques).map(([key, value]) => `
             <li>
-                <p>${key} -> ${value}</p>
+                <p>${key} => ${value}</p>
             </li>
         `).join('');
 
@@ -89,9 +89,10 @@ export default class ShowItem {
 
         if (document.getElementById('noterItem') != null) {
             document.getElementById('noterItem').addEventListener('click', () => {
-                let note = document.querySelector(`input[name="note-${item.id}"]:checked`);
-                if (note) {
-                    ItemProvider.updateNote(item, parseInt(note.value));
+                let newnote = document.querySelector(`input[name="note-${item.id}"]:checked`);
+                if (newnote) {
+                    ItemProvider.updateNote(item, parseInt(newnote.value));
+                    console.log(item.note, item.nbnote)
                     router();
                 } else {
                     alert('Veuillez choisir une note');

@@ -1,4 +1,5 @@
 import { ENDPOINT } from "../config.js";
+import Character from "../model/character.js";
 import AllCharacters from "../views/pages/AllCharacters.js";
 
 export default class CharacterProvider {
@@ -22,7 +23,16 @@ export default class CharacterProvider {
 
             const paginatedCharacters = filteredCharacters.slice(start, start + limit);
 
-            return paginatedCharacters;
+            let res = []
+            paginatedCharacters.forEach(charElement => {
+                let c = new Character(charElement.id, charElement.nom, charElement.description, charElement.type, charElement.note, charElement.nbnote);
+                Object.entries(charElement.caracteristique).map(([key, value]) => {
+                    c.addCarac(key, value)
+                });
+                res.push(c);
+            });
+
+            return res;
         } catch (err) {
             console.log('Error getting documents\n', err);
         }
@@ -38,7 +48,12 @@ export default class CharacterProvider {
         try {
             const response = await fetch(`${ENDPOINT}/characters/` + id, options);
             const json = await response.json();
-            return json;
+
+            let c = new Character(json.id, json.nom, json.description, json.note, json.nbnote);
+            Object.entries(json.caracteristique).map(([key, value]) => {
+                c.addCarac(key, value)
+            });
+            return c;
         } catch (err) {
             console.log('Error getting documents\n', err);
         }
@@ -69,7 +84,7 @@ export default class CharacterProvider {
     static updateNote = async (character, note) => {
         let newNote = note;
         if (character.note !== 0) {
-            newNote = (character.note + note) / 2;
+            newNote = (character.note * character.nbnote + note) / (character.nbnote+1);
         }
         const options = {
             method: 'PATCH',
@@ -77,7 +92,8 @@ export default class CharacterProvider {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                note: newNote
+                note: newNote,
+                nbnote: character.nbnote+1
             })
         };
         try {

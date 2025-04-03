@@ -1,10 +1,11 @@
 export default class Item {
-    constructor(id, nom, description, type, note) {
+    constructor(id, nom, description, type, note, nbnote) {
         this._id = id;
         this._nom = nom;
         this._description = description;
         this._type = type;
         this._note = note;
+        this._nbnote = nbnote;
         this._caracteristiques = {}
     }
 
@@ -70,5 +71,22 @@ export default class Item {
         if (this._caracteristiques.hasOwnProperty(nom)) {
             this._caracteristiques[nom] += newValue
         }
+    }
+
+    // Note
+    get note() {
+        return this._note;
+    }
+
+    get nbnote() {
+        return this._nbnote;
+    }
+
+    set note(newnote) {
+        this._note = newnote;
+    }
+
+    set nbnote(nbnote) {
+        this._nbnote = nbnote;
     }
 }
