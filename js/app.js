@@ -4,7 +4,6 @@ import ShowCharacter from "./views/pages/showCharacter.js";
 import AllItems from "./views/pages/allItems.js";
 import ShowItem from "./views/pages/showItem.js";
 import Error404 from "./views/pages/error404.js";
-import Accueil from "./views/pages/accueil.js";
 import AllFavorites from "./views/pages/allFavorites.js";
 
 const routes = {
