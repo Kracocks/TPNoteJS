@@ -11,7 +11,7 @@ export default class AllItems {
 
         let view = `
             <section class="items">
-                <h2>Les items</h2>
+                <h2>Les équipements</h2>
                 <select name="item" id="item-select">
                     <option value="" ${AllItems.type === '' ? 'selected' : ''}>All item</option>
                     <option value="casque" ${AllItems.type === 'casque' ? 'selected' : ''}>Casques</option>
@@ -20,7 +20,7 @@ export default class AllItems {
                     <option value="bottes" ${AllItems.type === 'bottes' ? 'selected' : ''}>Bottes</option>
                     <option value="arme" ${AllItems.type === 'arme' ? 'selected' : ''}>Armes</option>
                 </select>
-                <input id="search-bar" type="text" placeholder="Rechercher un item..." />
+                <input id="search-bar" type="text" placeholder="Rechercher un item" value="${AllItems.nom}"/>
                 <button id="search">Valider</button>
                 <ul>
                     ${items.map((item) => {
@@ -99,10 +99,17 @@ export default class AllItems {
         document.getElementById('next').addEventListener('click', updateCounter);
 
         document.getElementById('search').addEventListener('click', () => {
-            let recherche = document.getElementById('search-bar').value;
-            AllItems.nom = recherche;
+            AllItems.nom = document.getElementById('search-bar').value;
             AllItems.debut = 0;
             router();
+        });
+
+        document.getElementById('search-bar').addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                AllItems.nom = document.getElementById('search-bar').value;
+                AllItems.debut = 0;
+                router();
+            }
         });
     }
 }
