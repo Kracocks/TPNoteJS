@@ -1,0 +1,82 @@
+/* Style général */
+.character {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.character h2 {
+    color: #2c3e50;
+}
+
+.character p {
+    font-size: 18px;
+    color: #333;
+}
+
+.character img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+.character ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.character ul li {
+    margin: 5px;
+    font-size: 16px;
+    color: #555;
+}
+
+/* Favoris */
+.character img[alt="star"] {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+/* Boutons */
+.character button {
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.character button:hover {
+    background-color: #d35400;
+}
+
+/* Notation */
+.character input[type="radio"] {
+    display: none;
+}
+
+.character label {
+    cursor: pointer;
+    padding: 5px;
+    font-size: 18px;
+    color: #777;
+    transition: color 0.3s;
+}
+
+.character input[type="radio"]:checked + label {
+    color: #e67e22;
+    font-weight: bold;
+}

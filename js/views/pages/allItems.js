@@ -11,7 +11,7 @@ export default class AllItems {
 
         let view = `
             <section class="items">
-                <h2>Les Temporaires</h2>
+                <h2>Les items</h2>
                 <select name="item" id="item-select">
                     <option value="" ${AllItems.type === '' ? 'selected' : ''}>All item</option>
                     <option value="casque" ${AllItems.type === 'casque' ? 'selected' : ''}>Casques</option>
