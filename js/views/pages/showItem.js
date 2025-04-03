@@ -10,8 +10,8 @@ export default class ShowItem {
 
         let note = Array.from({ length: 5 }, (_, i) => `
                             <li>
-                                <input type="radio" id="note${item.id}-${i}" name="note-${item.id}" value="${i}"/>
-                                <label for="note${item.id}-${i}">${i}</label>
+                                <input type="radio" id="note${item.id}-${i+1}" name="note-${item.id}" value="${i+1}"/>
+                                <label for="note${item.id}-${i+1}">${i+1}</label>
                             </li>
                         `).join('');
 

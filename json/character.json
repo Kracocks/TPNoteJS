@@ -10,7 +10,7 @@
         "agilite": 60,
         "intelligence": 50
       },
-      "note": 2
+      "note": 0
     },
     {
       "id": "2",
@@ -34,7 +34,7 @@
         "agilite": 80,
         "intelligence": 70
       },
-      "note": 2.1873425646917894
+      "note": 0
     },
     {
       "id": "4",
@@ -164,7 +164,7 @@
       "caracteristique": {
         "agilite": 8
       },
-      "note": 2.25
+      "note": 0
     },
     {
       "id": "3",
