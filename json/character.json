@@ -36,8 +36,8 @@
         "agilite": 80,
         "intelligence": 70
       },
-      "note": 2,
-      "nbnote": 2
+      "note": 0,
+      "nbnote": 0
     },
     {
       "id": "4",
@@ -49,8 +49,8 @@
         "agilite": 85,
         "intelligence": 90
       },
-      "note": null,
-      "nbnote": 1
+      "note": 0,
+      "nbnote": 0
     },
     {
       "id": "5",
@@ -188,8 +188,8 @@
       "caracteristique": {
         "force": 12
       },
-      "note": 4,
-      "nbnote": 1
+      "note": 0,
+      "nbnote": 0
     },
     {
       "id": "4",
