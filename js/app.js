@@ -8,7 +8,7 @@ import Accueil from "./views/pages/accueil.js";
 import AllFavorites from "./views/pages/allFavorites.js";
 
 const routes = {
-    '/': Accueil,
+    '/': AllCharacters,
     '/characters': AllCharacters,
     '/characters/:id': ShowCharacter,
     '/items': AllItems,
